@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Web OS Ultimate</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="ui/theme.css">
+<link rel="stylesheet" href="ui/components.css">
+</head>
+<body>
+
+<div id="desktop"></div>
+
+<div id="taskbar">
+  <div id="startBtn">☰</div>
+  <div id="taskApps"></div>
+  <div id="clock"></div>
+</div>
+
+<div id="startMenu" class="hidden">
+  <div onclick="AppManager.launch('notes')">メモ</div>
+  <div onclick="AppManager.launch('browser')">ブラウザ</div>
+  <div onclick="AppManager.launch('files')">ファイル</div>
+  <div onclick="AppManager.launch('terminal')">ターミナル</div>
+  <div onclick="location.reload()">再起動</div>
+</div>
+
+<script src="core/kernel.js"></script>
+<script src="core/windowManager.js"></script>
+<script src="core/fileSystem.js"></script>
+<script src="core/virtualDesktop.js"></script>
+<script src="core/notificationManager.js"></script>
+<script src="core/appManager.js"></script>
+<script src="core/accountManager.js"></script>
+
+<script src="apps/notes.js"></script>
+<script src="apps/browser.js"></script>
+<script src="apps/files.js"></script>
+<script src="apps/terminal.js"></script>
+
+<script>
+document.getElementById("startBtn").onclick=()=>{
+  document.getElementById("startMenu").classList.toggle("hidden");
+};
+
+setInterval(()=>{
+  document.getElementById("clock").innerText =
+    new Date().toLocaleTimeString();
+},1000);
+</script>
+
+</body>
+</html>
