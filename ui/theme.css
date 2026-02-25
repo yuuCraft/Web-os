@@ -1,0 +1,54 @@
+body {
+  margin:0;
+  background:linear-gradient(135deg,#e0e7ff,#f8fafc);
+  font-family: "Segoe UI", sans-serif;
+  overflow:hidden;
+}
+
+.window {
+  position:absolute;
+  width:500px;
+  height:350px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(25px);
+  box-shadow:0 20px 50px rgba(0,0,0,.2);
+  transition:all .25s ease;
+}
+
+.titlebar {
+  padding:10px;
+  cursor:move;
+  display:flex;
+  justify-content:space-between;
+}
+
+.controls span {
+  margin-left:10px;
+  cursor:pointer;
+}
+
+.maximized {
+  top:0 !important;
+  left:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  border-radius:0;
+}
+
+.open-anim {
+  animation:open .25s ease;
+}
+
+.close-anim {
+  animation:close .2s ease forwards;
+}
+
+@keyframes open {
+  from { transform:scale(.8); opacity:0; }
+  to { transform:scale(1); opacity:1; }
+}
+
+@keyframes close {
+  to { transform:scale(.8); opacity:0; }
+}
