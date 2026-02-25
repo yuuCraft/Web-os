@@ -1,0 +1,39 @@
+#desktop{
+  width:100vw;
+  height:100vh;
+}
+
+#taskbar{
+  position:fixed;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(255,255,255,.7);
+  padding:10px 20px;
+  border-radius:30px;
+  backdrop-filter:blur(20px);
+  display:flex;
+  gap:20px;
+}
+
+#startMenu{
+  position:fixed;
+  bottom:70px;
+  left:50%;
+  transform:translateX(-50%);
+  background:white;
+  padding:10px;
+  border-radius:10px;
+}
+
+.hidden{display:none;}
+
+.toast{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:black;
+  color:white;
+  padding:10px;
+  border-radius:10px;
+}
